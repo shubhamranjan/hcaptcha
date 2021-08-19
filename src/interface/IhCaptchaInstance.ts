@@ -1,15 +1,17 @@
-import { IExecuteOptions } from './IExecuteOptions'
 import { IRenderParameters } from './IRenderParameters'
 export interface IhCaptchaInstance {
-  onload(callback: () => void): void;
-
   /**
    * Will execute the hCaptcha using the given SiteKey and the given options.
-   * @param siteKey The hCaptcha SiteKey.
-   * @param options The options for the execution. (Only known property is "action")
+   * @param widgetID The hCaptcha widgetID.
    */
-  execute(siteKey: string, options: IExecuteOptions): Promise<string>;
+  execute(widgetID: string): void;
 
+  /**
+   * Gets the response for the hCaptcha widget with widgetID.
+   * @param widgetID Optional unique ID for a widget. Defaults to first widget created.
+   */
+  getResponse(widgetID: string): string;
+  
   /**
    * Will render the hCaptcha widget into the given container with the given parameters. This render function is
    * useful when using `badge: 'inline'`, which lets you render the hCaptcha widget into the given container and
