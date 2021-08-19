@@ -7,5 +7,5 @@ export declare interface IExecuteOptions {
     onload?: string;
     render?: string;
     hl?: string;
-    recaptchacompat?: string;
+    hCaptchacompat?: string;
 }

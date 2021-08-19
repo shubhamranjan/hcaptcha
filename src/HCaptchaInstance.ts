@@ -1,32 +1,33 @@
 import { IhCaptchaInstance } from './interface/IhCaptchaInstance'
 
 /**
- * A simple wrapper for the "grecaptcha" object.
+ * A simple wrapper for the "imhcaptcha" object.
  *
  * Currently only wraps the "execute" function.
  */
 export class HCaptchaInstance {
     private readonly siteKey: string
-    private readonly recaptchaID: string
-    private readonly recaptcha: IhCaptchaInstance
+    private readonly hCaptchaID: string
+    private readonly hCaptcha: IhCaptchaInstance
 
-    public constructor (siteKey: string, recaptchaID: string, recaptcha: IhCaptchaInstance) {
+    public constructor (siteKey: string, hCaptchaID: string, hcaptcha: IhCaptchaInstance) {
       this.siteKey = siteKey
-      this.recaptchaID = recaptchaID
-      this.recaptcha = recaptcha
+      this.hCaptchaID = hCaptchaID
+      this.hCaptcha = hcaptcha
     }
 
     /**
-     * Will execute the recaptcha with the given action.
+     * Will execute the hcaptcha with the given action.
      *
      * @param action The action to execute with.
      */
-    public async execute (onload?: string, render?: string, hl?: string, recaptchacompat?: string): Promise<string> {
-      return this.recaptcha.execute(this.recaptchaID, { onload, render, hl, recaptchacompat })
+    public async execute (onload?: string, render?: string, hl?: string,hCaptchacompat?: string): Promise<string> {
+      console.log(this.hCaptchaID, onload, render, hl, hCaptchacompat )
+      return this.hCaptcha.execute(this.hCaptchaID, { onload, render, hl, hCaptchacompat })
     }
 
     /**
-     * Will return the site key, with which the reCAPTCHA
+     * Will return the site key, with which the hCaptcha
      * has been initialized.
      */
     public getSiteKey (): string {

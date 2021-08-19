@@ -1,7 +1,7 @@
 import { IExecuteOptions } from './IExecuteOptions'
 import { IRenderParameters } from './IRenderParameters'
 export interface IhCaptchaInstance {
-  ready(callback: () => void): void;
+  onload(callback: () => void): void;
 
   /**
    * Will execute the hCaptcha using the given SiteKey and the given options.

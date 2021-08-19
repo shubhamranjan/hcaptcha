@@ -15,13 +15,13 @@ export interface IhCaptchaLoaderOptions {
     renderParameters?: { [key: string]: string };
 
       /**
-   * Defines the additional parameters for the explicit rendering process.
-   */
-  explicitRenderParameters?: IhCaptchaExplicitRenderParameters;
+     * Defines the additional parameters for the explicit rendering process.
+     */
+    explicitRenderParameters?: IhCaptchaExplicitRenderParameters;
 
     /**
-     * Defines a custom url for ReCaptcha JS file.
-     * Useful when self hosting or proxied ReCaptcha JS file.
+     * Defines a custom url for hCaptcha JS file.
+     * Useful when self hosting or proxied hCaptcha JS file.
      */
     customUrl?: string;
 }
