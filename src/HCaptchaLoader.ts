@@ -41,7 +41,7 @@ class HCaptchaLoader {
         return Promise.reject(new Error('This is a library for the browser!'))
       }
 
-      // Check if imhcaptcha is already registered.
+      // Check if hcaptcha is already registered.
       if (HCaptchaLoader.getLoadingState() === ELoadingState.LOADED) {
         // Check if the site key is equal to the already loaded instance
         if (HCaptchaLoader.instance?.getSiteKey() === siteKey) {
