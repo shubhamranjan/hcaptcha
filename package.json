@@ -1,5 +1,5 @@
 {
-  "name": "hcaptcha",
+  "name": "@shubhamranjan/hcaptcha",
   "version": "0.0.1",
   "description": "hCaptcha library for web",
   "main": "dist/index.js",
