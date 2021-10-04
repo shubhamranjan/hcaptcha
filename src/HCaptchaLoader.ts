@@ -132,6 +132,8 @@ class HCaptchaLoader {
       // Create script element
       const scriptElement: HTMLScriptElement = document.createElement('script')
       scriptElement.setAttribute('hCaptcha-script', '')
+      scriptElement.setAttribute('async', '')
+      scriptElement.setAttribute('defer', '')
 
       let scriptBase = 'https://js.hcaptcha.com/1/api.js'
 
@@ -154,7 +156,6 @@ class HCaptchaLoader {
           resolve(scriptElement)
         }), false)
         scriptElement.onerror = (error): void => {
-          console.log(error)
           HCaptchaLoader.setLoadingState(ELoadingState.NOT_LOADED)
           reject(error)
         }
