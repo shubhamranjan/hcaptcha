@@ -41,7 +41,7 @@ class HCaptchaLoader {
         return Promise.reject(new Error('This is a library for the browser!'))
       }
 
-      // Check if imhcaptcha is already registered.
+      // Check if hcaptcha is already registered.
       if (HCaptchaLoader.getLoadingState() === ELoadingState.LOADED) {
         // Check if the site key is equal to the already loaded instance
         if (HCaptchaLoader.instance?.getSiteKey() === siteKey) {
@@ -132,6 +132,8 @@ class HCaptchaLoader {
       // Create script element
       const scriptElement: HTMLScriptElement = document.createElement('script')
       scriptElement.setAttribute('hCaptcha-script', '')
+      scriptElement.setAttribute('async', '')
+      scriptElement.setAttribute('defer', '')
 
       let scriptBase = 'https://js.hcaptcha.com/1/api.js'
 
@@ -154,7 +156,6 @@ class HCaptchaLoader {
           resolve(scriptElement)
         }), false)
         scriptElement.onerror = (error): void => {
-          console.log(error)
           HCaptchaLoader.setLoadingState(ELoadingState.NOT_LOADED)
           reject(error)
         }

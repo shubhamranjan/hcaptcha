@@ -1,7 +1,7 @@
 import { IhCaptchaInstance } from './interface/IhCaptchaInstance'
 
 /**
- * A simple wrapper for the "imhcaptcha" object.
+ * A simple wrapper for the "hCaptcha" object.
  *
  * Currently only wraps the "execute" function.
  */
@@ -17,19 +17,25 @@ export class HCaptchaInstance {
   }
 
   /**
-   * Will execute the hcaptcha with the given action.
+   * Will execute the hcaptcha
    */
   public async execute(): Promise<void> {
     return this.hCaptcha.execute(this.hwidgetID)
   }
 
   /**
-* Will execute the hcaptcha with the given action.
-*/
+   * Removes hcaptcha container
+   */
+  public async remove(): Promise<void>{
+    return this.hCaptcha.remove(this.hwidgetID)
+  }
+
+  /**
+  * Will process hCatpcha and return token
+  */
   public async getResponse(): Promise<string> {
     return this.hCaptcha.getResponse(this.hwidgetID)
   }
-
 
   /**
    * Will return the site key, with which the hCaptcha

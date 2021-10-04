@@ -1,7 +1,16 @@
 {
   "name": "@shubhamranjan/hcaptcha",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "hCaptcha library for web",
+  "license": "MIT",
+  "author": "Shubham Ranjan <contact@shubhamranjan.dev>",
+  "bugs": {
+    "url": "https://github.com/shubhamranjan/hcaptcha/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shubhamranjan/hcaptcha"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
